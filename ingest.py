@@ -25,7 +25,7 @@ vector_store = QdrantVectorStore(client=client, collection_name="acenos_kb")
 storage_context = StorageContext.from_defaults(vector_store=vector_store)
 
 # --- Chargement récursif de tous les fichiers ---
-print(f"Scan du dossier : {DOSSIER_ACENOS}")
+print(f" Scan du dossier : {DOSSIER_ACENOS}")
 documents = SimpleDirectoryReader(
     input_dir=DOSSIER_ACENOS,
     recursive=True,                        # parcourt tous les sous-dossiers
@@ -35,13 +35,8 @@ documents = SimpleDirectoryReader(
 
 print(f"{len(documents)} chunks chargés depuis {DOSSIER_ACENOS}")
 
-# --- Affichage des fichiers trouvés ---
-fichiers_uniques = set(doc.metadata.get("file_name", "") for doc in documents)
-print(f"📄 {len(fichiers_uniques)} fichiers distincts :\n")
-for f in sorted(fichiers_uniques):
-    print(f"   • {f}")
 
 # --- Indexation ---
 print(f"\n Indexation dans Qdrant...")
 VectorStoreIndex.from_documents(documents, storage_context=storage_context)
-print("🎉 Indexation terminée !")
+print(" Indexation terminée !")
