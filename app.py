@@ -205,3 +205,13 @@ if question := st.chat_input("Pose ta question à la base de connaissances ACENO
             except Exception as e:
                 st.error(f"Erreur lors de la requête : {str(e)}")
                 st.info("Vérifie que tes clés API sont bien configurées et que la base de connaissances est indexée.")
+
+#with st.sidebar:
+#     st.divider()
+#     if st.button(" Synchroniser depuis Teams"):
+#         with st.spinner("Synchronisation en cours..."):
+#             from sharepoint_sync import synchroniser_teams
+#             synchroniser_teams()
+#         st.success("Base de connaissances mise à jour !")
+#         st.cache_resource.clear()
+#         st.rerun() 

@@ -8,11 +8,12 @@ import qdrant_client
 load_dotenv()
 
 # --- Configuration ---
-DOSSIER_ACENOS = r"C:\Users\HoudaALOUANE\ACENOS"  # chemin vers le dossier à ingérer
+# TEST SUR DOSSIER LOCAL (métier DATA)
+DOSSIER_ACENOS = r"C:\Users\HoudaALOUANE\ACENOS\TEST_AI_Agentic"  # chemin vers le dossier à ingérer
 
 EXTENSIONS_AUTORISEES = [".pdf", ".docx", ".pptx", ".txt", ".xlsx"]
 
-Settings.embed_model = OpenAIEmbedding(model="text-embedding-3-small")
+Settings.embed_model = OpenAIEmbedding(model="text-embedding-3-small", embed_batch_size=200)
 Settings.chunk_size = 512
 Settings.chunk_overlap = 64
 
