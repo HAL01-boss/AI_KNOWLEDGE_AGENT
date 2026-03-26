@@ -9,7 +9,7 @@ load_dotenv()
 
 # --- Configuration ---
 # TEST SUR DOSSIER LOCAL (métier DATA)
-DOSSIER_ACENOS = r"C:\Users\HoudaALOUANE\ACENOS\TEST_AI_Agentic"  # chemin vers le dossier à ingérer
+DOSSIER_ACENOS = r"C:\Users\HoudaALOUANE\AppData\Local\Python\bin\knowledge_agent\TEST_OPENAI\docs"  # chemin vers le dossier à ingérer
 
 EXTENSIONS_AUTORISEES = [".pdf", ".docx", ".pptx", ".txt", ".xlsx"]
 
